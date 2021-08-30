@@ -24,15 +24,11 @@ const ToDoForm = () => {
   };
   return (
     <>
-      {!!duplicateItem && (
-      <ToDoReconfirm
-        taskItem={duplicateItem}
-      />
-      )}
+      
     <div className="card card-body my-3">
       <div className="input-group">
         <input
-          value={userInput}
+          value={userInput || ''}
           type="text"
           onChange={handleChange}
           placeholder="Enter task..."
@@ -49,6 +45,11 @@ const ToDoForm = () => {
         </div>
       </div>
     </div>
+    {!!duplicateItem && (
+      <ToDoReconfirm
+        taskItem={duplicateItem}
+      />
+      )}
     </>
   );
 };

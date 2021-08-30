@@ -2,26 +2,21 @@ import React from "react";
 import ToDo from "./ToDo";
 import ToDoEditReconfirm from "./ToDoEditReconfirm";
 import { useSelector, useDispatch } from "react-redux";
-import { clearTodoList, setDuplicateItem} from "../redux/actions/index";
+import { clearTodoList, setDuplicateItem } from "../redux/actions/index";
 
 const ToDoList = () => {
 
   const dispatch = useDispatch();
-  const { list,duplicateEditItem,duplicateItemIndex } = useSelector(state => state.todos);
+  const { list, duplicateEditItem } = useSelector(state => state.todos);
   const handleClearAll = () => {
     dispatch(clearTodoList());
-    dispatch(setDuplicateItem(false)); 
+    dispatch(setDuplicateItem(false));
   };
 
   return (
     <>
       {!!duplicateEditItem && (
-        <ToDoEditReconfirm
-          //  updateTaskToList={handleDuplicateEdit}
-          // handleEditDiscard={handleEditDiscard}
-          taskItem={duplicateEditItem}
-          DuplicateIndex={duplicateItemIndex}
-        />
+        <ToDoEditReconfirm />
       )}
 
       <ol className="list-group my-5 border border-light">

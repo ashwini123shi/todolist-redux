@@ -3,12 +3,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { editTodo,setDuplicateEditItem } from "../redux/actions/index";
 
 
-const ToDoEditReconfirm = ({
- // updateTaskToList,
-  //handleEditDiscard,
-  taskItem,
-  DuplicateIndex
-}) => {
+const ToDoEditReconfirm = () => {
   const dispatch = useDispatch();
   const { list,duplicateEditItem,duplicateEditItemId,duplicateItemIndex } = useSelector(state => state.todos);
   const handleDuplicateEdit = () => {

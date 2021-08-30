@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addTodo,setDuplicateItem } from "../redux/actions/index";
+import { addTodo, setDuplicateItem } from "../redux/actions/index";
 
-const ToDoReconfirm = ({taskItem }) => {
+const ToDoReconfirm = ({ taskItem }) => {
   const dispatch = useDispatch();
   const addDuplicateTask = () => {
-     dispatch(addTodo(taskItem)); 
-     dispatch(setDuplicateItem(false));
-   };
+    dispatch(addTodo(taskItem));
+    dispatch(setDuplicateItem(false));
+  };
 
-   const handleDiscard = () => {
+  const handleDiscard = () => {
     dispatch(setDuplicateItem(false));
   };
 
@@ -18,13 +18,13 @@ const ToDoReconfirm = ({taskItem }) => {
       <h5>Dupicate task {taskItem}, Still you want to Add?</h5>
       <div className="row">
         <span
-          onClick={()=>{addDuplicateTask()}}
+          onClick={() => { addDuplicateTask() }}
           className="mx-2 text-success cursor-ptr"
         >
           Add
         </span>
 
-        <span onClick={()=>{handleDiscard()}} className="mx-2 text-danger cursor-ptr">
+        <span onClick={() => { handleDiscard() }} className="mx-2 text-danger cursor-ptr">
           Discard
         </span>
       </div>
