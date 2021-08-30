@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { editTodo,setDuplicateEditItem,setDuplicateEditItemId } from "../redux/actions/index";
+import { editTodo,setDuplicateEditItem } from "../redux/actions/index";
 
 
 const ToDoEditReconfirm = ({
@@ -19,6 +19,10 @@ const ToDoEditReconfirm = ({
     dispatch(setDuplicateEditItem(false));
   };
 
+  const handleEditDiscard = () => {
+    dispatch(setDuplicateEditItem(false));
+  };
+
   return (
     <div className="card card-body my-3">
       <h5>
@@ -33,7 +37,7 @@ const ToDoEditReconfirm = ({
         </span>
 
         <span
-        //  onClick={() => handleEditDiscard(taskItem)}
+         onClick={() => handleEditDiscard()}
           className="mx-2 text-danger cursor-ptr"
         >
           Discard

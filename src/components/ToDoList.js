@@ -31,7 +31,8 @@ const ToDoList = () => {
             className="list-group-item text-capitalize justify-content-between my-2"
           >
             <ToDo
-              todo={todo}
+              //todo={todo}
+              {...todo}
             />
           </li>
         ))}

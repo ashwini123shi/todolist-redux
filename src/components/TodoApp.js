@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 //css
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
 //components
 import Header from "./Header";
 import ToDoList from "./ToDoList";
-
 import ToDoForm from "./ToDoForm";
 
-//redux
-import { useSelector } from "react-redux";
-import { addTodo,clearTodoList,deleteTodo,toggleTodo,duplicateItem,duplicateEditItem,duplicateItemIndex} from "../redux/actions/index";
-
-
-
 const TodoApp = () => {
-  
-  const { toDoListVal } = useSelector(state => state.todos);
-
-
   return (
     <div className="container">
       <div className="row">
